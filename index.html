@@ -11,6 +11,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      /* Theme bootstrap — dark is the default. The site only shows light mode
+         when the visitor has explicitly toggled to light before (stored in
+         localStorage under 'nelisiwe-theme'). Runs early so there is no flash
+         of the wrong theme before first paint. */
+      (function () {
+        var theme = 'dark';
+        try {
+          if (localStorage.getItem('nelisiwe-theme') === 'light') theme = 'light';
+        } catch (err) {}
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
     <style>
       :root {
         color-scheme: dark;
@@ -1758,6 +1771,15 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
+      .experience-org--brand {
+        text-transform: none;
+        letter-spacing: 0.03em;
+      }
+      .experience-location {
+        margin-top: 4px;
+        color: var(--text-muted);
+        font-size: 0.72rem;
+      }
       .experience-card p {
         margin-top: 12px;
         color: var(--text-muted);
@@ -3112,6 +3134,7 @@
               <div>
                 <h3 class="experience-role">Software Development Intern</h3>
                 <div class="experience-org">CAPACITI</div>
+                <div class="experience-location">Salt River, Cape Town</div>
                 <p>Building hands-on skills in software development while learning how real projects move from idea to execution.</p>
                 <span class="experience-status">Currently active</span>
                 <div class="experience-tags">
@@ -3125,7 +3148,8 @@
               <div class="experience-period">2025 — 2026</div>
               <div>
                 <h3 class="experience-role">Software Development Learnership</h3>
-                <div class="experience-org">Jumpstart</div>
+                <div class="experience-org experience-org--brand">JumpstartYourCareer</div>
+                <div class="experience-location">Mataffin, Mbombela</div>
                 <p>Developing my technical foundations through structured learning, coding practice and practical experience.</p>
                 <span class="experience-status">Technical foundation</span>
                 <div class="experience-tags">
@@ -3246,10 +3270,9 @@
             </article>
             <article class="project-row reveal left">
               <div class="project-row-media">
-                <div class="project-media-frame project-cover">
-                  <i class="project-cover-grid" aria-hidden="true"></i>
-                  <span class="project-cover-mark" aria-hidden="true">VP</span>
-                  <span class="project-cover-label">VarsityPath Navigator</span>
+                <div class="project-media-frame">
+                  <img src="varsity.PNG" alt="VarsityPath Navigator app preview" class="project-preview-img" loading="lazy" />
+                  <span class="project-media-badge">App Preview</span>
                 </div>
                 <div class="project-media-glow" aria-hidden="true"></div>
               </div>
@@ -3354,7 +3377,7 @@
             <article class="education-card reveal left" data-index="01">
               <div class="education-mark">CP</div>
               <div>
-                <h3>Diploma of Education, Computer Engineering</h3>
+                <h3>Diploma in Engineering Technology in Computer Engineering</h3>
                 <div class="education-school">Cape Peninsula University of Technology</div>
                 <p>Currently building a strong foundation in computer engineering, software development and technical problem-solving.</p>
                 <div class="education-tags">
