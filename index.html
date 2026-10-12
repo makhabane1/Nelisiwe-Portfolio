@@ -260,33 +260,33 @@
       }
       .title-greeting {
         display: block;
-        font-size: clamp(4.2rem, 12vw, 11rem);
-        letter-spacing: -0.16em;
-        line-height: 0.72;
-        font-weight: 900;
+        font-size: clamp(2.1rem, 4.8vw, 4.2rem);
+        letter-spacing: -0.08em;
+        line-height: 0.9;
+        font-weight: 700;
         text-transform: uppercase;
-        color: var(--text);
-        text-shadow: 0 0 24px rgba(243,184,201,0.12);
+        color: rgba(247, 242, 238, 0.88);
+        text-shadow: 0 0 18px rgba(243,184,201,0.08);
       }
       .title-surname {
         display: block;
-        margin-top: 14px;
-        margin-left: 0.14em;
-        font-size: clamp(1.05rem, 2vw, 2rem);
-        letter-spacing: 0.52em;
+        margin-top: 16px;
+        margin-left: 0.18em;
+        font-size: clamp(1.2rem, 2.8vw, 2.5rem);
+        letter-spacing: 0.34em;
         text-transform: uppercase;
-        color: rgba(247, 242, 238, 0.8);
-        font-weight: 500;
+        color: rgba(247, 242, 238, 0.96);
+        font-weight: 600;
         position: relative;
       }
       .title-surname::before {
         content: "";
         position: absolute;
-        left: -0.2em;
+        left: -0.22em;
         top: 50%;
-        width: 2.8em;
+        width: 3.2em;
         height: 1px;
-        background: linear-gradient(90deg, rgba(243,184,201,0.9), transparent);
+        background: linear-gradient(90deg, rgba(243,184,201,0.85), transparent);
         transform: translateY(-50%);
       }
       .title-actor {
@@ -1756,6 +1756,17 @@
         color: var(--text);
         transform: translateY(-2px);
       }
+      .project-points {
+        margin: 16px 0 0;
+        padding-left: 1.1rem;
+        color: var(--text-soft);
+        display: grid;
+        gap: 8px;
+        line-height: 1.6;
+      }
+      .project-points li {
+        color: var(--text-muted);
+      }
       .project-footer {
         display: flex;
         align-items: center;
@@ -2216,11 +2227,13 @@
       @keyframes chipFloat { from { transform: translateY(-7px); } to { transform: translateY(9px); } }
 
       .hero-marquee-wrap {
-        position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+        position: relative; left: auto; right: auto; bottom: auto; z-index: 2;
         overflow: hidden; border-top: 1px solid var(--border);
         background: rgba(13,13,16,.5);
         backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
       }
+      .hero-followup { padding-top: 24px; }
+      .hero-followup .hero-proof { margin: 0 auto 22px; }
       .hero-marquee {
         display: flex; align-items: center; gap: 18px; width: max-content;
         padding: 14px 0; white-space: nowrap;
@@ -2615,6 +2628,25 @@
          PROJECTS — editorial zig-zag rows
          ============================================================ */
       .project-rows { display: grid; gap: 26px; }
+      .project-groups { display: grid; gap: 32px; }
+      .project-group { display: grid; gap: 22px; }
+      .project-group-header {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text-soft);
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      .project-group-header::before,
+      .project-group-header::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--border), transparent);
+      }
       .project-row {
         position: relative;
         display: grid;
@@ -3381,21 +3413,15 @@
               <span class="title-surname">MAKHABANE</span>
               <span class="title-actor">
                 <span class="accent-prefix" aria-hidden="true">✦</span>
-                <span class="accent"><span class="role-text" id="roleText">She builds things.</span></span>
+                <span class="accent"><span class="role-text" id="roleText">She builds with intention.</span></span>
               </span>
             </h1>
             <p class="hero-description reveal">
-              I’m a software developer who enjoys experimenting with technology, building practical digital products, and solving real problems with thoughtful design and code. My work blends product thinking, web development, and creative problem-solving while I keep growing through hands-on projects and learning.
+                I build practical digital products with code, curiosity, and thoughtful design.
             </p>
             <div class="hero-actions reveal">
               <a class="btn btn-primary shine" href="#projects">View My Work</a>
               <a class="btn btn-secondary" href="Nelisiwe-Makhabane-CV.html" download="Nelisiwe-Makhabane-CV.html">Download CV</a>
-              <a class="btn btn-secondary" href="#contact">Let’s Connect</a>
-            </div>
-            <div class="hero-proof reveal" aria-label="Professional focus">
-              <div class="hero-proof-item"><strong>01</strong><span>Software-first mindset</span></div>
-              <div class="hero-proof-item"><strong>02</strong><span>Practical problem solving</span></div>
-              <div class="hero-proof-item"><strong>03</strong><span>Always learning</span></div>
             </div>
           </div>
 
@@ -3416,13 +3442,19 @@
                 </div>
               </div>
             </div>
-            <span class="float-chip chip-1">JavaScript</span>
-            <span class="float-chip chip-2">Responsive</span>
-            <span class="float-chip chip-3">AI</span>
-            <span class="float-chip chip-4">Product</span>
           </div>
         </div>
+        <a class="hero-scroll" href="#about" aria-label="Continue to about section">Scroll</a>
+      </section>
 
+      <div class="hero-followup">
+        <div class="wrap">
+          <div class="hero-proof reveal" aria-label="Professional focus">
+            <div class="hero-proof-item"><strong>01</strong><span>Software-first mindset</span></div>
+            <div class="hero-proof-item"><strong>02</strong><span>Practical problem solving</span></div>
+            <div class="hero-proof-item"><strong>03</strong><span>Always learning</span></div>
+          </div>
+        </div>
         <div class="hero-marquee-wrap" aria-hidden="true">
           <div class="hero-marquee">
             <b>JavaScript</b><span class="sep">✦</span>
@@ -3443,8 +3475,7 @@
             <b>Problem Solving</b><span class="sep">✦</span>
           </div>
         </div>
-        <a class="hero-scroll" href="#about" aria-label="Continue to about section">Scroll</a>
-      </section>
+      </div>
 
       <section id="about" class="section-shell">
         <div class="wrap">
@@ -3533,6 +3564,7 @@
               </div>
             </article>
           </div>
+          </div>
         </div>
       </section>
 
@@ -3544,104 +3576,157 @@
             <p class="section-sub">A selection of product concepts and web projects that demonstrate problem-solving, software development and thoughtful user experiences.</p>
           </div>
 
-          <div class="project-rows">
-            <article class="project-row reveal left">
-              <div class="project-row-media">
-                <div class="project-media-frame">
-                  <div class="luvli-preview" aria-label="Luvli product preview">
-                    <div class="luvli-shell">
-                      <div class="luvli-header">
-                        <div class="luvli-logo" aria-hidden="true">✦</div>
-                        <div class="luvli-brand">
-                          <strong>Luvli</strong>
-                          <span>Make every day feel intentional.</span>
+          <div class="project-groups">
+            <div class="project-group">
+              <h3 class="project-group-header">Personal</h3>
+              <article class="project-row reveal left">
+                <div class="project-row-media">
+                  <div class="project-media-frame">
+                    <div class="luvli-preview" aria-label="Luvli product preview">
+                      <div class="luvli-shell">
+                        <div class="luvli-header">
+                          <div class="luvli-logo" aria-hidden="true">✦</div>
+                          <div class="luvli-brand">
+                            <strong>Luvli</strong>
+                            <span>Make every day feel intentional.</span>
+                          </div>
+                        </div>
+                        <div class="luvli-actions">
+                          <button class="luvli-btn" type="button">Create account</button>
+                          <button class="luvli-btn primary" type="button">Sign in</button>
+                        </div>
+                        <div class="luvli-content">
+                          <p class="luvli-kicker">Welcome back</p>
+                          <h3 class="luvli-title">Let’s get your<br><em>day moving.</em></h3>
+                          <div class="luvli-list">
+                            <div class="luvli-item active"><span class="dot" aria-hidden="true"></span>Right where you left it</div>
+                            <div class="luvli-item"><span class="dot" aria-hidden="true"></span>Luvli has been thinking</div>
+                            <div class="luvli-item"><span class="dot" aria-hidden="true"></span>Still just yours</div>
+                          </div>
+                        </div>
+                        <div class="luvli-meta">
+                          <span class="luvli-chip">Local-first</span>
+                          <span class="luvli-chip">Works offline</span>
                         </div>
                       </div>
-                      <div class="luvli-actions">
-                        <button class="luvli-btn" type="button">Create account</button>
-                        <button class="luvli-btn primary" type="button">Sign in</button>
+                    </div>
+                    <span class="project-media-badge">Live product</span>
+                  </div>
+                  <div class="project-media-glow" aria-hidden="true"></div>
+                </div>
+                <div class="project-row-body">
+                  <div class="project-row-top">
+                    <span class="project-index" aria-hidden="true">01</span>
+                    <span class="tag">Product build</span>
+                  </div>
+                  <h3>Luvli</h3>
+                  <p class="project-desc">A productivity-focused concept for planning, daily intention-setting, and keeping personal routines clear without friction.</p>
+                  <div class="project-tags">
+                    <span>Product design</span>
+                    <span>Productivity</span>
+                    <span>Planning</span>
+                    <span>UX writing</span>
+                  </div>
+                  <div class="project-footer">
+                    <a href="https://luvli.netlify.app" target="_blank" rel="noreferrer">Visit live app ↗</a>
+                    <span>Real product</span>
+                  </div>
+                </div>
+              </article>
+              <article class="project-row reveal left">
+                <div class="project-row-media">
+                  <div class="project-media-frame project-abstract-frame project-abstract-frame--rose">
+                    <div class="abstract-badge">Decision tool</div>
+                    <div class="abstract-panel">
+                      <div class="abstract-panel-top">
+                        <span>NextMove</span>
+                        <span>AI</span>
                       </div>
-                      <div class="luvli-content">
-                        <p class="luvli-kicker">Welcome back</p>
-                        <h3 class="luvli-title">Let’s get your<br><em>day moving.</em></h3>
-                        <div class="luvli-list">
-                          <div class="luvli-item active"><span class="dot" aria-hidden="true"></span>Right where you left it</div>
-                          <div class="luvli-item"><span class="dot" aria-hidden="true"></span>Luvli has been thinking</div>
-                          <div class="luvli-item"><span class="dot" aria-hidden="true"></span>Still just yours</div>
-                        </div>
+                      <div class="abstract-chart">
+                        <span class="chart-bar bar-a"></span>
+                        <span class="chart-bar bar-b"></span>
+                        <span class="chart-bar bar-c"></span>
+                        <span class="chart-bar bar-d"></span>
                       </div>
-                      <div class="luvli-meta">
-                        <span class="luvli-chip">Local-first</span>
-                        <span class="luvli-chip">Works offline</span>
+                      <div class="abstract-metrics">
+                        <span>Risk</span>
+                        <strong>32%</strong>
                       </div>
                     </div>
                   </div>
-                  <span class="project-media-badge">Live product</span>
+                  <div class="project-media-glow" aria-hidden="true"></div>
                 </div>
-                <div class="project-media-glow" aria-hidden="true"></div>
-              </div>
-              <div class="project-row-body">
-                <div class="project-row-top">
-                  <span class="project-index" aria-hidden="true">01</span>
-                  <span class="tag">Product build</span>
-                </div>
-                <h3>Luvli</h3>
-                <p class="project-desc">A productivity-focused concept for planning, daily intention-setting, and keeping personal routines clear without friction.</p>
-                <div class="project-tags">
-                  <span>Product design</span>
-                  <span>Productivity</span>
-                  <span>Planning</span>
-                  <span>UX writing</span>
-                </div>
-                <div class="project-footer">
-                  <a href="https://luvli.netlify.app" target="_blank" rel="noreferrer">Visit live app ↗</a>
-                  <span>Real product</span>
-                </div>
-              </div>
-            </article>
-            <article class="project-row reveal left">
-              <div class="project-row-media">
-                <div class="project-media-frame project-abstract-frame project-abstract-frame--rose">
-                  <div class="abstract-badge">Decision tool</div>
-                  <div class="abstract-panel">
-                    <div class="abstract-panel-top">
-                      <span>NextMove</span>
-                      <span>AI</span>
-                    </div>
-                    <div class="abstract-chart">
-                      <span class="chart-bar bar-a"></span>
-                      <span class="chart-bar bar-b"></span>
-                      <span class="chart-bar bar-c"></span>
-                      <span class="chart-bar bar-d"></span>
-                    </div>
-                    <div class="abstract-metrics">
-                      <span>Risk</span>
-                      <strong>32%</strong>
-                    </div>
+                <div class="project-row-body">
+                  <div class="project-row-top">
+                    <span class="project-index" aria-hidden="true">02</span>
+                    <span class="tag">Product concept</span>
+                  </div>
+                  <h3>My NextMove AI</h3>
+                  <p class="project-desc">A decision-support concept that helps people think through major life choices with structured scenarios, trade-offs and risk awareness.</p>
+                  <ul class="project-points">
+                    <li>Maps life decisions into clearer trade-offs and possible outcomes.</li>
+                    <li>Helps users weigh risks, opportunity, and long-term impact.</li>
+                    <li>Turns complex thinking into a simpler decision-making experience.</li>
+                  </ul>
+                  <div class="project-tags">
+                    <span>Product thinking</span>
+                    <span>Risk analysis</span>
+                    <span>AI exploration</span>
+                    <span>Human-centred design</span>
+                  </div>
+                  <div class="project-footer">
+                    <a href="https://github.com/makhabane1/my-nextmove-ai" target="_blank" rel="noreferrer">View repository ↗</a>
+                    <span>Concept build</span>
                   </div>
                 </div>
-                <div class="project-media-glow" aria-hidden="true"></div>
-              </div>
-              <div class="project-row-body">
-                <div class="project-row-top">
-                  <span class="project-index" aria-hidden="true">02</span>
-                  <span class="tag">Product concept</span>
+              </article>
+            </div>
+
+            <div class="project-group">
+              <h3 class="project-group-header">Capaciti</h3>
+              <article class="project-row reveal right">
+                <div class="project-row-media">
+                  <div class="project-media-frame project-abstract-frame project-abstract-frame--sage">
+                    <div class="abstract-badge">Attendance platform</div>
+                    <div class="abstract-panel compact-panel">
+                      <div class="abstract-panel-top">
+                        <span>CAPACITI</span>
+                        <span>Register</span>
+                      </div>
+                      <div class="abstract-checklist">
+                        <span>Attendance</span>
+                        <span>WFH requests</span>
+                        <span>Progress reviews</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-media-glow" aria-hidden="true"></div>
                 </div>
-                <h3>My NextMove AI</h3>
-                <p class="project-desc">A decision-support concept that helps people think through major life choices with structured scenarios, trade-offs and risk awareness.</p>
-                <div class="project-tags">
-                  <span>Product thinking</span>
-                  <span>Risk analysis</span>
-                  <span>AI exploration</span>
-                  <span>Human-centred design</span>
+                <div class="project-row-body">
+                  <div class="project-row-top">
+                    <span class="project-index" aria-hidden="true">03</span>
+                    <span class="tag">Team project · ImpactDevs</span>
+                  </div>
+                  <h3>CAPACITI Online Register</h3>
+                  <p class="project-desc">A role-based web application concept for managing candidate attendance, work-from-home requests, progress reviews and team oversight.</p>
+                  <ul class="project-points">
+                    <li>Gives candidates tools to record attendance and submit WFH requests.</li>
+                    <li>Helps Tech Champions review candidates, requests and progress.</li>
+                    <li>Provides administrators with reporting and oversight workflows.</li>
+                  </ul>
+                  <div class="project-tags">
+                    <span>Role-based workflows</span>
+                    <span>Attendance</span>
+                    <span>WFH management</span>
+                    <span>Dashboard design</span>
+                  </div>
+                  <div class="project-footer">
+                    <a href="https://github.com/ImpactDevs-CAPACITI/-CAPACITI-Online-Register-and-WFH-Management-System" target="_blank" rel="noreferrer">View team repository ↗</a>
+                    <span>Prototype · mock data</span>
+                  </div>
                 </div>
-                <div class="project-footer">
-                  <a href="https://github.com/makhabane1/my-nextmove-ai" target="_blank" rel="noreferrer">View repository ↗</a>
-                  <span>Concept build</span>
-                </div>
-              </div>
-            </article>
-            <article class="project-row reveal">
+              </article>
+              <article class="project-row reveal">
               <div class="project-row-media">
                 <div class="project-media-frame project-abstract-frame project-abstract-frame--stone">
                   <div class="abstract-badge">Creative workflow</div>
@@ -3663,11 +3748,16 @@
               </div>
               <div class="project-row-body">
                 <div class="project-row-top">
-                  <span class="project-index" aria-hidden="true">03</span>
+                  <span class="project-index" aria-hidden="true">04</span>
                   <span class="tag">Creative technology</span>
                 </div>
                 <h3>Realign Studio AI</h3>
                 <p class="project-desc">A creative technology concept exploring how AI-supported tools can help people organise ideas and move from inspiration to meaningful work.</p>
+                <ul class="project-points">
+                  <li>Helps turn scattered thoughts into a usable creative workflow.</li>
+                  <li>Organises ideas so people can move from inspiration to action.</li>
+                  <li>Frames AI as a support tool for focus, clarity, and momentum.</li>
+                </ul>
                 <div class="project-tags">
                   <span>AI products</span>
                   <span>Creative technology</span>
@@ -3700,11 +3790,16 @@
               </div>
               <div class="project-row-body">
                 <div class="project-row-top">
-                  <span class="project-index" aria-hidden="true">04</span>
+                  <span class="project-index" aria-hidden="true">05</span>
                   <span class="tag">Service design · Code Ninjas group</span>
                 </div>
                 <h3>RoadReady Traffic Services</h3>
                 <p class="project-desc">A public-service experience designed to make road-readiness information easier to find, understand and act on. Built as a group project with my Code Ninjas team.</p>
+                <ul class="project-points">
+                  <li>Clarifies road-readiness information in a simple, helpful format.</li>
+                  <li>Guides users to what matters most before they take action.</li>
+                  <li>Turns dense service information into a clearer public experience.</li>
+                </ul>
                 <div class="project-tags">
                   <span>Road safety</span>
                   <span>Service design</span>
@@ -3738,11 +3833,16 @@
               </div>
               <div class="project-row-body">
                 <div class="project-row-top">
-                  <span class="project-index" aria-hidden="true">05</span>
+                  <span class="project-index" aria-hidden="true">06</span>
                   <span class="tag">Education tool</span>
                 </div>
                 <h3>VarsityPath Navigator</h3>
                 <p class="project-desc">A student-focused navigator designed to make university pathways, opportunities and next steps easier to explore with confidence.</p>
+                <ul class="project-points">
+                  <li>Helps students understand possible academic pathways clearly.</li>
+                  <li>Surfaces opportunities and next steps in a simpler format.</li>
+                  <li>Supports informed decision-making during a stressful phase.</li>
+                </ul>
                 <div class="project-tags">
                   <span>Student support</span>
                   <span>Education access</span>
