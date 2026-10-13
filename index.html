@@ -84,13 +84,13 @@
         inset: 0;
         pointer-events: none;
         background:
-          linear-gradient(120deg, rgba(255,255,255,0.018) 0, rgba(255,255,255,0.018) 1px, transparent 1px, transparent 48px),
-          radial-gradient(circle at 15% 22%, rgba(243,184,201,0.12), transparent 18%),
-          radial-gradient(circle at 80% 28%, rgba(216,180,254,0.12), transparent 20%),
-          radial-gradient(circle at 52% 72%, rgba(185,245,208,0.08), transparent 18%);
+          linear-gradient(120deg, rgba(255,255,255,0.012) 0, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 48px),
+          radial-gradient(circle at 15% 22%, rgba(243,184,201,0.07), transparent 18%),
+          radial-gradient(circle at 80% 28%, rgba(216,180,254,0.07), transparent 20%),
+          radial-gradient(circle at 52% 72%, rgba(185,245,208,0.05), transparent 18%);
         background-size: 48px 48px, 100% 100%, 100% 100%, 100% 100%;
         mask-image: radial-gradient(circle at center, black 48%, transparent 100%);
-        opacity: 0.7;
+        opacity: 0.42;
         z-index: 0;
       }
       html[data-theme='light'] body {
@@ -158,22 +158,22 @@
       .hero::after {
         content: "";
         position: absolute;
-        width: 300px;
-        height: 300px;
+        width: 220px;
+        height: 220px;
         border-radius: 50%;
-        right: -80px;
-        top: -90px;
-        background: rgba(216,180,254,0.18);
-        filter: blur(90px);
+        right: -30px;
+        top: -40px;
+        background: rgba(216,180,254,0.12);
+        filter: blur(76px);
         pointer-events: none;
         animation: drift 16s ease-in-out infinite alternate;
       }
       .hero-heart {
         position: absolute;
-        font-size: clamp(1.2rem, 2vw, 2.4rem);
+        font-size: clamp(1rem, 1.8vw, 2rem);
         line-height: 1;
-        color: rgba(243, 184, 201, 0.75);
-        text-shadow: 0 0 16px rgba(243, 184, 201, 0.35);
+        color: rgba(243, 184, 201, 0.5);
+        text-shadow: 0 0 12px rgba(243, 184, 201, 0.18);
         animation: pulseSoft 8s ease-in-out infinite;
         pointer-events: none;
         user-select: none;
@@ -193,9 +193,11 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        backdrop-filter: blur(12px);
-        background: rgba(13, 13, 16, 0.6);
-        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        background: rgba(10, 11, 16, 0.68);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 12px 34px -24px rgba(0,0,0,0.72);
       }
       .nav-wrap {
         display: flex;
@@ -208,6 +210,7 @@
         font-weight: 800;
         letter-spacing: -0.08em;
         text-transform: uppercase;
+        color: var(--text);
       }
       .brand span { color: var(--accent-2); }
       .brand {
@@ -242,15 +245,16 @@
       }
       .eyebrow {
         display: inline-block;
-        padding: 10px 14px;
-        border: 1px solid var(--border);
+        padding: 10px 16px;
+        border: 1px solid rgba(255,255,255,0.12);
         border-radius: 999px;
-        background: rgba(255,255,255,0.02);
+        background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(243,184,201,0.05));
         color: var(--text-soft);
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
         margin-bottom: 18px;
+        box-shadow: inset 0 1px rgba(255,255,255,0.05);
       }
       .hero-title {
         font-size: clamp(2.5rem, 5vw, 4.4rem);
@@ -265,7 +269,7 @@
         line-height: 0.9;
         font-weight: 700;
         text-transform: uppercase;
-        color: rgba(247, 242, 238, 0.88);
+        color: rgba(247, 242, 238, 0.92);
         text-shadow: 0 0 18px rgba(243,184,201,0.08);
       }
       .title-surname {
@@ -299,7 +303,24 @@
         font-size: 1.2rem;
         color: var(--accent-2);
       }
-      .hero-title .accent { color: var(--accent-2); }
+      .hero-title .accent {
+        color: var(--accent-2);
+        font-style: italic;
+        font-weight: 700;
+        font-size: clamp(1.3rem, 2.2vw, 2.2rem);
+      }
+      .role-text {
+        display: inline-block;
+        background: linear-gradient(118deg, #f7dfe5 0%, #f0bacd 26%, #e1c9ff 56%, #d9e8ff 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 18px rgba(243,184,201,0.12);
+      }
+      .role-lead {
+        display: inline-block;
+        font-weight: 800;
+      }
       .hero-description {
         margin-top: 20px;
         max-width: 58ch;
@@ -345,21 +366,26 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 52px;
-        padding: 0 22px;
-        border-radius: 12px;
+        min-height: 54px;
+        padding: 0 26px;
+        border-radius: 999px;
         border: 1px solid transparent;
-        transition: transform 180ms ease, border-color 180ms ease;
+        transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        letter-spacing: 0.02em;
+        font-weight: 700;
+        font-size: 0.98rem;
       }
       .btn:hover { transform: translateY(-2px); }
       .btn-primary {
-        background: linear-gradient(135deg, var(--lavender) 0%, var(--purple) 100%);
-        color: #17161c;
-        font-weight: 700;
+        background: linear-gradient(135deg, #f8d7e1 0%, #e8bdd1 38%, #d69ab0 100%);
+        color: #1b171d;
+        box-shadow: 0 18px 34px -20px rgba(243,184,201,0.98);
       }
       .btn-secondary {
-        border-color: var(--border);
-        background: rgba(255,255,255,0.02);
+        border-color: rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.04);
+        color: var(--text);
+        box-shadow: inset 0 1px rgba(255,255,255,0.04);
       }
 
       .hero-visual {
@@ -370,11 +396,11 @@
       .portrait-card {
         width: min(100%, 420px);
         min-height: 540px;
-        border-radius: 28px;
-        background: linear-gradient(180deg, rgba(31,28,37,0.95), rgba(21,20,26,0.9));
-        border: 1px solid var(--border);
+        border-radius: 30px;
+        background: linear-gradient(180deg, rgba(43,34,54,0.95), rgba(22,20,30,0.88));
+        border: 1px solid rgba(255,255,255,0.12);
         overflow: hidden;
-        box-shadow: 0 30px 80px -28px rgba(125,94,203,0.22);
+        box-shadow: 0 30px 80px -28px rgba(125,94,203,0.26), inset 0 1px rgba(255,255,255,0.08);
       }
       .portrait-shell {
         position: relative;
@@ -383,29 +409,98 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 36px 30px;
+        padding: 30px 28px 26px;
+      }
+      .portrait-topline {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        color: rgba(255,255,255,0.7);
+        font-size: 0.76rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .portrait-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.12);
+        color: rgba(255,255,255,0.86);
+      }
+      .portrait-status::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #7ce2b5;
+        box-shadow: 0 0 12px rgba(124,226,181,0.8);
       }
       .portrait-badge {
-        width: 116px;
-        height: 116px;
+        width: 140px;
+        height: 140px;
+        margin-top: 22px;
         border-radius: 50%;
         object-fit: cover;
         object-position: center;
-        border: 1px solid rgba(216,180,254,0.4);
+        border: 3px solid rgba(255,255,255,0.35);
         background: rgba(216,180,254,0.08);
+        box-shadow: 0 28px 50px -24px rgba(0,0,0,0.72);
+      }
+      .portrait-copy {
+        margin-top: 18px;
+        text-align: center;
+        width: 100%;
+      }
+      .portrait-role {
+        font-size: clamp(2rem, 2.4vw, 2.85rem);
+        line-height: 1.08;
+        letter-spacing: -0.06em;
+        font-weight: 700;
       }
       .portrait-text {
-        margin-top: 22px;
-        text-align: center;
-        color: var(--text-muted);
-        letter-spacing: 0.1em;
+        margin-top: 8px;
+        color: rgba(255,255,255,0.8);
+        font-size: 1.02rem;
+        letter-spacing: 0.02em;
+      }
+      .portrait-tagline {
+        margin-top: 14px;
+        color: rgba(255,255,255,0.74);
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
-        font-size: 0.76rem;
+      }
+      .portrait-actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 18px;
+      }
+      .mini-btn {
+        min-height: 46px;
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 999px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(214,195,255,0.18));
+        color: rgba(255,255,255,0.94);
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: inset 0 1px rgba(255,255,255,0.08);
+      }
+      .mini-btn-primary {
+        background: linear-gradient(135deg, #f7d7e2 0%, #efc0d6 42%, #e4b7c9 100%);
+        border-color: rgba(255,255,255,0.22);
+        color: #1f1720;
+        box-shadow: 0 14px 26px -18px rgba(240,177,205,0.9);
       }
       .portrait-meta {
-        margin-top: 24px;
+        margin-top: 20px;
         width: 100%;
-        max-width: 220px;
         display: grid;
         gap: 10px;
       }
@@ -413,17 +508,24 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 16px;
-        padding: 10px 12px;
+        gap: 12px;
+        padding: 11px 12px;
         border-radius: 12px;
-        border: 1px solid var(--border);
-        background: rgba(255,255,255,0.02);
-        font-size: 0.72rem;
-        color: var(--text-soft);
+        border: 1px solid rgba(255,255,255,0.09);
+        background: rgba(255,255,255,0.04);
+        font-size: 0.76rem;
+        color: rgba(255,255,255,0.8);
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+      .portrait-pill span {
+        flex: 1;
+        text-align: left;
       }
       .portrait-pill strong {
-        color: var(--text);
-        font-weight: 700;
+        flex: 1;
+        text-align: right;
       }
 
       .section-shell {
@@ -437,12 +539,12 @@
         inset: 18px 2% 0;
         border-radius: 38px;
         background:
-          radial-gradient(circle at 14% 18%, rgba(243,184,201,0.1), transparent 18%),
-          radial-gradient(circle at 82% 22%, rgba(216,180,254,0.1), transparent 18%),
-          linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0) 52%, rgba(255,255,255,0.016));
-        border: 1px solid rgba(255,255,255,0.04);
+          radial-gradient(circle at 14% 18%, rgba(243,184,201,0.06), transparent 18%),
+          radial-gradient(circle at 82% 22%, rgba(216,180,254,0.06), transparent 18%),
+          linear-gradient(135deg, rgba(255,255,255,0.014), rgba(255,255,255,0.0) 52%, rgba(255,255,255,0.01));
+        border: 1px solid rgba(255,255,255,0.03);
         z-index: -1;
-        opacity: 0.88;
+        opacity: 0.72;
       }
       .section-head {
         margin-bottom: 28px;
@@ -470,8 +572,8 @@
         min-height: 220px;
         padding: 22px 20px 18px;
         border-radius: 20px;
-        border: 1px solid var(--border);
-        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.08);
+        background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015));
         transition: transform 320ms cubic-bezier(.2,.8,.2,1), border-color 320ms ease, box-shadow 320ms ease;
       }
       .story-card:hover, .project-card:hover, .skill-card:hover {
@@ -505,9 +607,9 @@
         position: relative;
         overflow: hidden;
         padding: 24px 22px;
-        border: 1px solid var(--border);
+        border: 1px solid rgba(255,255,255,0.08);
         border-radius: 26px;
-        background: linear-gradient(150deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+        background: linear-gradient(150deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
         box-shadow: inset 0 1px rgba(255,255,255,0.08), 0 22px 44px -38px rgba(0,0,0,0.7);
         transition: transform 360ms cubic-bezier(.2,.8,.2,1), border-color 320ms ease, box-shadow 360ms ease;
       }
@@ -2157,7 +2259,14 @@
     /* ============================================================
          HERO UPGRADE — layered background, glassmorphism, motion
          ============================================================ */
-      .hero { padding-bottom: 130px; }
+      .hero { padding-bottom: 0; }
+      .hero-footer-band {
+        position: relative;
+        z-index: 1;
+        padding: 18px 0 20px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        background: rgba(13,13,16,0.18);
+      }
 
       .hero-bg {
         position: absolute; inset: 0; z-index: 0;
@@ -2217,12 +2326,13 @@
 
       .float-chip {
         position: absolute; z-index: 3; display: inline-flex; align-items: center; gap: 7px;
-        padding: 9px 14px; border-radius: 999px;
-        border: 1px solid var(--border-strong);
-        background: rgba(22,20,28,.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-        color: var(--text); font-family: 'Space Grotesk', sans-serif; font-size: .76rem; font-weight: 600;
-        box-shadow: 0 14px 30px -18px rgba(0,0,0,.7); pointer-events: none;
+        padding: 8px 12px; border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(22,20,28,.52); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+        color: var(--text); font-family: 'Space Grotesk', sans-serif; font-size: .72rem; font-weight: 600;
+        box-shadow: 0 10px 24px -18px rgba(0,0,0,.7); pointer-events: none;
         animation: chipFloat 6s ease-in-out infinite alternate;
+        opacity: 0.82;
       }
       .float-chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lavender); }
       .chip-1 { top: 9%; left: -30px; animation-delay: 0s; }
@@ -2233,9 +2343,9 @@
 
       .hero-marquee-wrap {
         position: relative; left: auto; right: auto; bottom: auto; z-index: 2;
-        overflow: hidden; border-top: 1px solid var(--border);
-        background: rgba(13,13,16,.5);
-        backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        overflow: hidden; border-top: 1px solid rgba(255,255,255,0.08);
+        background: rgba(13,13,16,.28);
+        backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
       }
       .hero-followup { padding-top: 24px; }
       .hero-followup .hero-proof { margin: 0 auto 22px; }
@@ -2596,6 +2706,7 @@
         letter-spacing: -0.09em;
         text-transform: uppercase;
         line-height: 0.82;
+        text-shadow: 0 0 30px rgba(216,180,254,0.12);
       }
       .title-name {
         display: block; width: fit-content; position: relative;
@@ -2617,9 +2728,21 @@
       }
       @keyframes titleShimmer { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
       @keyframes titleUnderline { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-      .title-actor { display: block; width: fit-content; margin-top: 14px; }
-      .accent-prefix { color: var(--accent-2); margin-right: 12px; }
-      .hero-title .accent { font-style: italic; font-weight: 700; font-size: clamp(1.4rem, 2.2vw, 2.2rem); }
+      .title-actor {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: fit-content;
+        margin-top: 14px;
+      }
+      .accent-prefix { color: var(--accent-2); margin-right: 2px; }
+      .hero-title .accent {
+        display: inline-block;
+        font-style: italic;
+        font-weight: 700;
+        font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+        letter-spacing: -0.03em;
+      }
       .title-cta {
         display: block; width: fit-content;
         color: var(--text); font-weight: 600; letter-spacing: -0.02em;
@@ -2659,10 +2782,10 @@
         gap: clamp(22px, 4vw, 52px);
         align-items: center;
         padding: 26px;
-        border: 1px solid rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.09);
         border-radius: 28px;
-        background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-        box-shadow: inset 0 1px rgba(255,255,255,0.06);
+        background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.012));
+        box-shadow: inset 0 1px rgba(255,255,255,0.06), 0 24px 56px -42px rgba(0,0,0,0.7);
         overflow: hidden;
         transition: transform 420ms cubic-bezier(.2,.8,.2,1), border-color 320ms ease, box-shadow 420ms ease;
       }
@@ -2717,6 +2840,54 @@
         text-transform: uppercase;
         z-index: 2;
       }
+      .techlift-live-frame {
+        background: #0f172a;
+        border: 1px solid rgba(255,255,255,0.12);
+      }
+      .techlift-live-frame iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: #ffffff;
+      }
+      .techlift-live-bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 14px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        background: rgba(15, 23, 42, 0.92);
+        backdrop-filter: blur(8px);
+      }
+      .techlift-live-dots {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .techlift-live-dots span {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .techlift-live-dots span:nth-child(1) { background: #ff7a7a; }
+      .techlift-live-dots span:nth-child(2) { background: #f3c969; }
+      .techlift-live-dots span:nth-child(3) { background: #7ce2b5; }
+      .techlift-live-url {
+        color: rgba(255,255,255,0.72);
+        font-size: 0.64rem;
+        letter-spacing: 0.08em;
+        text-transform: lowercase;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
       .project-media-glow {
         position: absolute; inset: 8%;
         background: radial-gradient(circle, rgba(216,180,254,0.25), transparent 70%);
@@ -2726,6 +2897,34 @@
         pointer-events: none;
       }
       .project-row:hover .project-media-glow { opacity: 1; }
+
+      .project-browser-shell {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background: rgba(9, 12, 15, 0.74);
+      }
+      .project-browser-shell .techlift-live-bar {
+        position: relative;
+        background: rgba(17, 20, 25, 0.96);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .project-browser-shell .panel-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        padding: 20px 18px 18px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
+      }
+      .project-browser-shell .dashboard-panel,
+      .project-browser-shell .service-panel,
+      .project-browser-shell .pathway-panel {
+        width: min(100%, 280px);
+        min-height: 200px;
+      }
 
       .luvli-preview {
         position: relative;
@@ -2998,6 +3197,183 @@
         font-size: 0.68rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+      }
+      .techlift-panel,
+      .dashboard-panel,
+      .creative-panel,
+      .service-panel,
+      .pathway-panel {
+        display: flex;
+        flex-direction: column;
+        width: min(100%, 300px);
+        min-height: 215px;
+        padding: 18px 16px 14px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.26);
+        border: 1px solid rgba(31,24,33,0.1);
+        box-shadow: inset 0 1px rgba(255,255,255,0.66);
+      }
+      .techlift-header,
+      .dashboard-header,
+      .service-header,
+      .pathway-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 0.82rem;
+        color: rgba(31,24,33,0.8);
+      }
+      .techlift-progress {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 18px;
+        align-items: end;
+        flex: 1;
+      }
+      .techlift-progress span {
+        display: block;
+        border-radius: 10px 10px 0 0;
+        background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(129,108,165,0.7));
+      }
+      .techlift-progress span:nth-child(1) { height: 35%; }
+      .techlift-progress span:nth-child(2) { height: 58%; }
+      .techlift-progress span:nth-child(3) { height: 72%; }
+      .techlift-progress span:nth-child(4) { height: 88%; }
+      .techlift-metrics {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.7rem;
+        margin-top: 14px;
+        color: rgba(31,24,33,0.82);
+      }
+      .techlift-metrics strong {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.3rem;
+        letter-spacing: -0.05em;
+      }
+      .dashboard-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .dashboard-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 8px 10px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.34);
+        border: 1px solid rgba(31,24,33,0.08);
+        font-size: 0.68rem;
+        color: rgba(31,24,33,0.82);
+      }
+      .dashboard-item strong {
+        display: inline-block;
+        min-width: 36px;
+        text-align: center;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.52);
+      }
+      .creative-panel {
+        justify-content: center;
+        gap: 12px;
+      }
+      .creative-flow {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .creative-node {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 10px;
+        border-radius: 999px;
+        font-size: 0.64rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: rgba(255,255,255,0.48);
+        color: rgba(31,24,33,0.8);
+      }
+      .creative-node.alt { background: rgba(177,203,193,0.5); }
+      .creative-node.accent { background: rgba(222,189,205,0.52); }
+      .creative-rail {
+        height: 1px;
+        width: 36px;
+        background: rgba(31,24,33,0.28);
+      }
+      .creative-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 4px;
+      }
+      .creative-tags span {
+        padding: 6px 8px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.38);
+        border: 1px solid rgba(31,24,33,0.08);
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .service-panel {
+        justify-content: center;
+        gap: 12px;
+      }
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 18px;
+      }
+      .service-grid span {
+        display: grid;
+        place-items: center;
+        min-height: 58px;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.38);
+        border: 1px solid rgba(31,24,33,0.08);
+        font-size: 0.64rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .pathway-panel {
+        justify-content: center;
+        gap: 12px;
+      }
+      .pathway-steps {
+        display: grid;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .pathway-step {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 10px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.34);
+        border: 1px solid rgba(31,24,33,0.08);
+        font-size: 0.68rem;
+        color: rgba(31,24,33,0.82);
+      }
+      .pathway-step b {
+        display: grid;
+        place-items: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.6);
+        font-size: 0.68rem;
       }
       .project-row-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
       .project-index {
@@ -3414,33 +3790,46 @@
           <div class="hero-copy reveal">
             <div class="eyebrow reveal">Software Developer · CAPACITI Intern · Product-minded builder</div>
             <h1 class="hero-title reveal">
-              <span class="title-greeting">NELISIWE</span>
+              <span class="title-greeting">Nelisiwe</span>
               <span class="title-surname">MAKHABANE</span>
               <span class="title-actor">
                 <span class="accent-prefix" aria-hidden="true">✦</span>
-                <span class="accent"><span class="role-text" id="roleText">She builds with intention.</span></span>
+                <span class="accent"><span class="role-text"><span class="role-lead">She</span> builds with intention.</span></span>
               </span>
             </h1>
             <div class="hero-description reveal">
-              <p>I’m Nelisiwe Makhabane, a software developer with a strong interest in turning ideas into practical, user-centred digital experiences.</p>
-              <p>I enjoy working across the full product journey — understanding the problem, shaping a clean solution, and building something that feels intuitive, useful, and well-crafted.</p>
-              <p>My work is driven by curiosity, persistence, and a love for learning. I’m especially interested in software development, product thinking, and how AI can support smarter, more meaningful experiences.</p>
+              <p>I’m a software developer focused on turning ideas into practical, user-centred digital experiences.</p>
+              <p>I enjoy working across the entire product journey, from identifying user needs and shaping solutions to building products that are intuitive, useful, and thoughtfully crafted.</p>
             </div>
             <div class="hero-actions reveal">
-              <a class="btn btn-primary shine" href="#projects">View My Work</a>
+              <a class="btn btn-primary shine" href="#projects">View my work →</a>
               <a class="btn btn-secondary" href="Nelisiwe-Makhabane-CV.html" download="Nelisiwe-Makhabane-CV.html">Download CV</a>
+            </div>
+            <div class="capability-list reveal">
+              <span class="capability-item">Product thinking</span>
+              <span class="capability-item">Frontend craft</span>
+              <span class="capability-item">AI workflows</span>
             </div>
           </div>
 
           <div class="hero-visual reveal scale">
             <div class="portrait-halo" aria-hidden="true"></div>
+            <div class="float-chip chip-1">Product-first</div>
+            <div class="float-chip chip-2">UI systems</div>
+            <div class="float-chip chip-3">Build lean</div>
+            <div class="float-chip chip-4">Curious builder</div>
             <div class="portrait-card" aria-label="Nelisiwe portrait">
               <div class="portrait-shell">
                 <div class="portrait-topline"><span>Portfolio / 2026</span><span class="portrait-status">Growing</span></div>
                 <img class="portrait-badge" src="NelisiweM.png" alt="Nelisiwe Makhabane" />
                 <div class="portrait-copy">
                   <div class="portrait-role">Software Developer</div>
-                  <div class="portrait-text">Building · Learning · Exploring</div>
+                  <div class="portrait-text">Nelisiwe Makhabane</div>
+                  <div class="portrait-tagline">BUILDING · LEARNING · EXPLORING</div>
+                </div>
+                <div class="portrait-actions">
+                  <button class="mini-btn mini-btn-primary" type="button">+ Connect</button>
+                  <button class="mini-btn" type="button">Message</button>
                 </div>
                 <div class="portrait-meta">
                   <div class="portrait-pill"><span>Current</span><strong>CAPACITI</strong></div>
@@ -3451,38 +3840,39 @@
             </div>
           </div>
         </div>
-        <a class="hero-scroll" href="#about" aria-label="Continue to about section">Scroll</a>
+
+        <div class="hero-scroll" aria-hidden="true">Scroll</div>
       </section>
 
-      <div class="hero-followup">
-        <div class="wrap">
-          <div class="hero-proof reveal" aria-label="Professional focus">
-            <div class="hero-proof-item"><strong>01</strong><span>Software-first mindset</span></div>
-            <div class="hero-proof-item"><strong>02</strong><span>Practical problem solving</span></div>
-            <div class="hero-proof-item"><strong>03</strong><span>Always learning</span></div>
+      <section class="hero-footer-band" aria-label="Portfolio summary">
+        <div class="wrap hero-followup reveal">
+          <div class="hero-proof">
+            <div class="hero-proof-item">
+              <strong>Product-minded</strong>
+              <span>From idea to usable solution</span>
+            </div>
+            <div class="hero-proof-item">
+              <strong>Design-aware</strong>
+              <span>Thoughtful, clear, user-first UX</span>
+            </div>
+            <div class="hero-proof-item">
+              <strong>Learning fast</strong>
+              <span>Always building and refining</span>
+            </div>
+          </div>
+          <div class="hero-marquee-wrap" aria-label="Core skills marquee">
+            <div class="hero-marquee">
+              <span><b>HTML</b> <span class="sep">•</span> CSS <span class="sep">•</span> JavaScript <span class="sep">•</span> Python</span>
+              <span><b>UI design</b> <span class="sep">•</span> UX thinking <span class="sep">•</span> Product strategy <span class="sep">•</span> AI workflow</span>
+              <span><b>HTML</b> <span class="sep">•</span> CSS <span class="sep">•</span> JavaScript <span class="sep">•</span> Python</span>
+              <span><b>UI design</b> <span class="sep">•</span> UX thinking <span class="sep">•</span> Product strategy <span class="sep">•</span> AI workflow</span>
+            </div>
           </div>
         </div>
-        <div class="hero-marquee-wrap" aria-hidden="true">
-          <div class="hero-marquee">
-            <b>JavaScript</b><span class="sep">✦</span>
-            <b>HTML &amp; CSS</b><span class="sep">✦</span>
-            <b>Responsive Design</b><span class="sep">✦</span>
-            <b>Python &amp; SQL</b><span class="sep">✦</span>
-            <b>Generative AI</b><span class="sep">✦</span>
-            <b>Product Thinking</b><span class="sep">✦</span>
-            <b>UI Motion</b><span class="sep">✦</span>
-            <b>Problem Solving</b><span class="sep">✦</span>
-            <b>JavaScript</b><span class="sep">✦</span>
-            <b>HTML &amp; CSS</b><span class="sep">✦</span>
-            <b>Responsive Design</b><span class="sep">✦</span>
-            <b>Python &amp; SQL</b><span class="sep">✦</span>
-            <b>Generative AI</b><span class="sep">✦</span>
-            <b>Product Thinking</b><span class="sep">✦</span>
-            <b>UI Motion</b><span class="sep">✦</span>
-            <b>Problem Solving</b><span class="sep">✦</span>
-          </div>
-        </div>
-      </div>
+      </section>
+
+      <section id="about" class="section-shell">
+      </section>
 
       <section id="about" class="section-shell">
         <div class="wrap">
@@ -3642,48 +4032,46 @@
               </article>
               <article class="project-row reveal left">
                 <div class="project-row-media">
-                  <div class="project-media-frame project-abstract-frame project-abstract-frame--rose">
-                    <div class="abstract-badge">Decision tool</div>
-                    <div class="abstract-panel">
-                      <div class="abstract-panel-top">
-                        <span>NextMove</span>
-                        <span>AI</span>
+                  <div class="project-media-frame techlift-live-frame">
+                    <div class="techlift-live-bar">
+                      <div class="techlift-live-dots" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                       </div>
-                      <div class="abstract-chart">
-                        <span class="chart-bar bar-a"></span>
-                        <span class="chart-bar bar-b"></span>
-                        <span class="chart-bar bar-c"></span>
-                        <span class="chart-bar bar-d"></span>
-                      </div>
-                      <div class="abstract-metrics">
-                        <span>Risk</span>
-                        <strong>32%</strong>
-                      </div>
+                      <span class="techlift-live-url">techlift-career-pathways.vercel.app</span>
                     </div>
+                    <iframe
+                      src="https://techlift-career-pathways.vercel.app/"
+                      title="TechLift Career Pathways live preview"
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                      allow="fullscreen">
+                    </iframe>
                   </div>
                   <div class="project-media-glow" aria-hidden="true"></div>
                 </div>
                 <div class="project-row-body">
                   <div class="project-row-top">
                     <span class="project-index" aria-hidden="true">02</span>
-                    <span class="tag">Product concept</span>
+                    <span class="tag">Product build · In progress</span>
                   </div>
-                  <h3>My NextMove AI</h3>
-                  <p class="project-desc">A decision-support concept that helps people think through major life choices with structured scenarios, trade-offs and risk awareness.</p>
+                  <h3>TechLift Career Pathways</h3>
+                  <p class="project-desc">A career-pathway platform concept focused on helping students and young professionals discover learning routes, opportunities and next steps with more clarity.</p>
                   <ul class="project-points">
-                    <li>Maps life decisions into clearer trade-offs and possible outcomes.</li>
-                    <li>Helps users weigh risks, opportunity, and long-term impact.</li>
-                    <li>Turns complex thinking into a simpler decision-making experience.</li>
+                    <li>Supports career exploration through structured pathways and guidance.</li>
+                    <li>Helps users connect skills, opportunities and learning progress.</li>
+                    <li>Builds a clear experience around discovery, direction and motivation.</li>
                   </ul>
                   <div class="project-tags">
-                    <span>Product thinking</span>
-                    <span>Risk analysis</span>
-                    <span>AI exploration</span>
-                    <span>Human-centred design</span>
+                    <span>Career pathways</span>
+                    <span>Education tech</span>
+                    <span>Product discovery</span>
+                    <span>In progress</span>
                   </div>
                   <div class="project-footer">
-                    <a href="https://github.com/makhabane1/my-nextmove-ai" target="_blank" rel="noreferrer">View repository ↗</a>
-                    <span>Concept build</span>
+                    <a href="https://techlift-career-pathways.vercel.app/" target="_blank" rel="noreferrer">Visit live preview ↗</a>
+                    <span>Still being built</span>
                   </div>
                 </div>
               </article>
@@ -3694,16 +4082,27 @@
               <article class="project-row reveal right">
                 <div class="project-row-media">
                   <div class="project-media-frame project-abstract-frame project-abstract-frame--sage">
-                    <div class="abstract-badge">Attendance platform</div>
-                    <div class="abstract-panel compact-panel">
-                      <div class="abstract-panel-top">
-                        <span>CAPACITI</span>
-                        <span>Register</span>
+                    <div class="project-browser-shell">
+                      <div class="techlift-live-bar">
+                        <div class="techlift-live-dots" aria-hidden="true">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                        <span class="techlift-live-url">capaciti-register.app</span>
                       </div>
-                      <div class="abstract-checklist">
-                        <span>Attendance</span>
-                        <span>WFH requests</span>
-                        <span>Progress reviews</span>
+                      <div class="panel-content">
+                        <div class="dashboard-panel">
+                          <div class="dashboard-header">
+                            <span>CAPACITI</span>
+                            <span>Register</span>
+                          </div>
+                          <div class="dashboard-list">
+                            <div class="dashboard-item"><span>Attendance</span><strong>96%</strong></div>
+                            <div class="dashboard-item"><span>WFH</span><strong>14</strong></div>
+                            <div class="dashboard-item"><span>Reviews</span><strong>7</strong></div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -3735,28 +4134,29 @@
               </article>
               <article class="project-row reveal">
               <div class="project-row-media">
-                <div class="project-media-frame project-abstract-frame project-abstract-frame--stone">
-                  <div class="abstract-badge">Creative workflow</div>
-                  <div class="abstract-panel">
-                    <div class="abstract-panel-top">
-                      <span>Realign</span>
-                      <span>Studio</span>
+                <div class="project-media-frame techlift-live-frame">
+                  <div class="techlift-live-bar">
+                    <div class="techlift-live-dots" aria-hidden="true">
+                      <span></span>
+                      <span></span>
+                      <span></span>
                     </div>
-                    <div class="abstract-flow">
-                      <span class="flow-node node-a">Idea</span>
-                      <span class="flow-connector"></span>
-                      <span class="flow-node node-b">Refine</span>
-                      <span class="flow-connector"></span>
-                      <span class="flow-node node-c">Ship</span>
-                    </div>
+                    <span class="techlift-live-url">contentgeneratorstudio.vercel.app</span>
                   </div>
+                  <iframe
+                    src="https://contentgeneratorstudio.vercel.app/"
+                    title="Realign Studio live preview"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allow="fullscreen">
+                  </iframe>
                 </div>
                 <div class="project-media-glow" aria-hidden="true"></div>
               </div>
               <div class="project-row-body">
                 <div class="project-row-top">
                   <span class="project-index" aria-hidden="true">04</span>
-                  <span class="tag">Creative technology</span>
+                  <span class="tag">Solo build</span>
                 </div>
                 <h3>Realign Studio AI</h3>
                 <p class="project-desc">A creative technology concept exploring how AI-supported tools can help people organise ideas and move from inspiration to meaningful work.</p>
@@ -3773,23 +4173,38 @@
                 </div>
                 <div class="project-footer">
                   <a href="https://github.com/makhabane1/realign-studio-ai" target="_blank" rel="noreferrer">View repository ↗</a>
-                  <span>Concept build</span>
+                  <span>Live concept</span>
                 </div>
               </div>
             </article>
             <article class="project-row reveal right">
               <div class="project-row-media">
                 <div class="project-media-frame project-abstract-frame project-abstract-frame--sage">
-                  <div class="abstract-badge">Service design</div>
-                  <div class="abstract-panel compact-panel">
-                    <div class="abstract-panel-top">
-                      <span>RoadReady</span>
-                      <span>Traffic</span>
+                  <div class="project-browser-shell">
+                    <div class="techlift-live-bar">
+                      <div class="techlift-live-dots" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                      <span class="techlift-live-url">roadready-traffic.app</span>
                     </div>
-                    <div class="abstract-checklist">
-                      <span>Safety check</span>
-                      <span>Docs</span>
-                      <span>Action plan</span>
+                    <div class="panel-content">
+                      <div class="service-panel">
+                        <div class="service-header">
+                          <span>RoadReady</span>
+                          <span>Traffic</span>
+                        </div>
+                        <div class="service-grid">
+                          <span>Docs</span>
+                          <span>Safety</span>
+                          <span>Guide</span>
+                        </div>
+                        <div class="dashboard-list">
+                          <div class="dashboard-item"><span>Check list</span><strong>Ready</strong></div>
+                          <div class="dashboard-item"><span>Action plan</span><strong>3 steps</strong></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -3798,7 +4213,7 @@
               <div class="project-row-body">
                 <div class="project-row-top">
                   <span class="project-index" aria-hidden="true">05</span>
-                  <span class="tag">Service design · Code Ninjas group</span>
+                  <span class="tag">Group project · Code Ninjas</span>
                 </div>
                 <h3>RoadReady Traffic Services</h3>
                 <p class="project-desc">A public-service experience designed to make road-readiness information easier to find, understand and act on. Built as a group project with my Code Ninjas team.</p>
@@ -3823,16 +4238,27 @@
             <article class="project-row reveal left">
               <div class="project-row-media">
                 <div class="project-media-frame project-abstract-frame project-abstract-frame--lavender">
-                  <div class="abstract-badge">Student guide</div>
-                  <div class="abstract-panel compact-panel">
-                    <div class="abstract-panel-top">
-                      <span>VarsityPath</span>
-                      <span>Navigator</span>
+                  <div class="project-browser-shell">
+                    <div class="techlift-live-bar">
+                      <div class="techlift-live-dots" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                      <span class="techlift-live-url">varsitypath.app</span>
                     </div>
-                    <div class="abstract-pill-stack">
-                      <span>Study path</span>
-                      <span>Opportunities</span>
-                      <span>Next steps</span>
+                    <div class="panel-content">
+                      <div class="pathway-panel">
+                        <div class="pathway-header">
+                          <span>VarsityPath</span>
+                          <span>Navigator</span>
+                        </div>
+                        <div class="pathway-steps">
+                          <div class="pathway-step"><b>1</b> Shortlist programs</div>
+                          <div class="pathway-step"><b>2</b> Explore funding</div>
+                          <div class="pathway-step"><b>3</b> Plan next steps</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -3841,7 +4267,7 @@
               <div class="project-row-body">
                 <div class="project-row-top">
                   <span class="project-index" aria-hidden="true">06</span>
-                  <span class="tag">Education tool</span>
+                  <span class="tag">Group project · Code Ninjas</span>
                 </div>
                 <h3>VarsityPath Navigator</h3>
                 <p class="project-desc">A student-focused navigator designed to make university pathways, opportunities and next steps easier to explore with confidence.</p>
@@ -3857,8 +4283,8 @@
                   <span>User guidance</span>
                 </div>
                 <div class="project-footer">
-                  <a href="https://github.com/RatiloeMbonani/varsitypath-navigator" target="_blank" rel="noreferrer">View repository ↗</a>
-                  <span>Web project</span>
+                  <a href="https://teams.microsoft.com/l/message/19:3Fq_avhUho0HltLHdnevNx51va1eDhFff9gCPlE1SxI1@thread.tacv2/1791881963843?tenantId=a3f14f21-237f-4028-b978-425eb768a716&groupId=e2119095-aa91-451d-9931-c2a360ca7f14&parentMessageId=1791881963843&teamName=Demand%20Academy%201%20CPT%20Aug%202026&channelName=Code%20Ninjas&createdTime=1791881963843&ngc=true" target="_blank" rel="noreferrer">View team thread ↗</a>
+                  <span>Team collaboration</span>
                 </div>
               </div>
             </article>
@@ -4407,7 +4833,7 @@
       const typeText = document.getElementById('typeText');
       const typePhrases = [
         'Two taps and you’re in her inbox.',
-        'Ask me about NextMove, Realign or RoadReady.',
+        'Ask me about TechLift, Realign or RoadReady.',
         'She usually replies within a day.',
         'Need her CV? It’s one click away.'
       ];
