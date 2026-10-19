@@ -763,64 +763,47 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .project--featured .project-visual { order: -1; }
 .project--wide .project-visual { min-height: 360px; }
 
-/* ---------- Luvli app composition ---------- */
-.luvli-shot {
-  width: min(400px, 84%);
-  background: var(--blush);
+/* ---------- Live app screenshots ---------- */
+.app-shot {
+  width: min(560px, 88%);
+  background: var(--ivory);
   color: var(--ink);
   border: 1px solid var(--rule-light);
   box-shadow: 18px 18px 0 rgba(241, 154, 145, 0.25);
-  padding: 26px 28px 30px;
 }
-.luvli-shot-bar {
-  display: flex; justify-content: space-between; align-items: center;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--rule-light);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-.luvli-shot-logo { color: var(--burgundy); }
-.luvli-shot-note { color: rgba(53, 21, 31, 0.55); letter-spacing: 0.08em; }
-.luvli-shot-body { padding-top: 24px; }
-.luvli-shot-kicker {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--burgundy);
-  opacity: 0.6;
-}
-.luvli-shot-title {
-  font-family: var(--font-accent);
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
-  line-height: 1.15;
-  margin-top: 10px;
-  color: var(--plum);
-}
-.luvli-shot-title em { color: var(--burgundy); }
-.luvli-shot-list { margin-top: 22px; }
-.luvli-shot-list li {
+.app-shot-bar {
   display: flex; align-items: center; gap: 12px;
-  padding-block: 12px;
-  border-top: 1px solid var(--rule-light);
-  font-size: 0.9rem;
-  color: rgba(53, 21, 31, 0.7);
+  padding: 10px 14px;
+  background: var(--blush);
+  border-bottom: 1px solid var(--rule-light);
 }
-.luvli-shot-list li i {
+.app-shot-dots {
+  display: inline-flex; gap: 5px;
+  flex: 0 0 auto;
+}
+.app-shot-dots i {
   width: 8px; height: 8px;
   border-radius: 50%;
   background: rgba(53, 21, 31, 0.25);
-  flex: 0 0 auto;
 }
-.luvli-shot-list li.is-active {
-  color: var(--plum);
+.app-shot-dots i:first-child { background: var(--coral); }
+.app-shot-url {
+  font-size: 0.66rem;
   font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  opacity: 0.6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.luvli-shot-list li.is-active i { background: var(--coral); }
+.app-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.app-shot--plum { box-shadow: 18px 18px 0 rgba(217, 135, 135, 0.22); }
 
 /* ---------- Typographic compositions ---------- */
 .type-composition {
