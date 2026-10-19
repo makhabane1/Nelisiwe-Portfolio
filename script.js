@@ -185,10 +185,10 @@
       return "Hi there! I can tell you about Nelisiwe's projects, skills, experience, education or how to get in touch. What would you like to know?";
     }
     if (msg.indexOf("project") !== -1 || msg.indexOf("work") !== -1 || msg.indexOf("build") !== -1 || msg.indexOf("portfolio") !== -1) {
-      return "Nelisiwe has built several projects, including <strong>Luvli</strong> (a live productivity app), <strong>TechLift Career Pathways</strong> (live preview, still being built), <strong>Realign Studio AI</strong> (live concept + repo), the <strong>CAPACITI Online Register</strong> (team prototype), <strong>RoadReady Traffic Services</strong> and <strong>VarsityPath Navigator</strong> (group projects). Scroll to the Work section to explore them.";
+      return "Nelisiwe has built several projects, including <strong>Luvli</strong> (a live productivity app), <strong>TechLift Career Pathways</strong> (live preview, still being built), <strong>Realign Studio AI</strong> (live app + repo), the <strong>CAPACITI Online Register</strong> (team prototype), <strong>RoadReady Traffic Services</strong> and <strong>VarsityPath Navigator</strong> (group projects). Scroll to the Work section to explore them.";
     }
     if (msg.indexOf("luvli") !== -1) {
-      return "Luvli is a productivity-focused product for planning and daily intention-setting — 'Make every day feel intentional.' You can try it live at <a href='https://luvli.netlify.app' target='_blank' rel='noreferrer'>luvli.netlify.app</a>.";
+      return "Luvli is a local-first day planner — smart scheduling that protects sleep and breaks, Pomodoro focus, friend streaks and affirmations written from your own goals. 'Make every day feel luvli.' Try it live at <a href='https://luvli.netlify.app' target='_blank' rel='noreferrer'>luvli.netlify.app</a>.";
     }
     if (msg.indexOf("skill") !== -1 || msg.indexOf("stack") !== -1 || msg.indexOf("tech") !== -1) {
       return "Her toolkit includes HTML &amp; accessibility, CSS &amp; responsive design, JavaScript, Python &amp; SQL and Git &amp; GitHub — alongside product thinking, UX, visual design and practical AI workflows. Full details are in the Skills Lab section.";
